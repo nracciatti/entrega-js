@@ -1,0 +1,40 @@
+<!-- Vamos a utilizar el mismo array de objetos "Pizzas🍕" del desafío general anterior. 
+👉 Crear un archivo HTML que contenga un h2, un h4, un input number y un botón. 
+👉 El desafío será, al tocar el botón, capturar el valor ingresado en el input.
+👉 Renderizar en el h2 el nombre y en el h4 el precio de la pizza cuyo id coincida con el numero ingresado en el input. 
+🚨 Si no coincide con ningún id, renderizar un mensaje de error.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="busqueda">
+      <label for="">Ingrese un número del 1 al 6.</label>
+      <input
+        type="number"
+        class="formulario"
+        id="Formulario"
+        min="1"
+        max="6"
+        placeholder="Seleccione un ID"
+      />
+      <button class="boton" id="Boton">Enviar</button>
+    </div>
+
+    <div class="resultado" id="Resultado">
+      <h2 id="NombrePizza"></h2>
+      <!-- <h2 id="pizzaNoEncontrada"></h2> -->
+      <h3 id="ingredientesPizza"></h3>
+      <h4 id="PrecioPizza"></h4>
+    </div>
+    <script src="main.js"></script>
+    <script src="misPizzas.js"></script>
+  </body>
+</html>
