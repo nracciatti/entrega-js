@@ -21,12 +21,13 @@ function MostrarPizzas(){
     const dato= parseInt(formulario.value)
     if (dato > 6) {
         alert("Ingrese un ID valido.");
+        console.log("Ingrese un ID valido.");
     }
     pizzas.forEach(pizza =>{
         if(pizza.id === dato){
-            pizzaName.textContent =  pizza.nombre
-            pizzaPrice.textContent =`${pizza.precio}`
+            pizzaName.textContent =  "Seleccionaste: " + pizza.nombre
             pizzaIngredients.textContent = `${pizza.ingredientes}`
+            pizzaPrice.textContent =  `$${pizza.precio}`
         }
     })
 }

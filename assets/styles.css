@@ -68,11 +68,10 @@ body {
 }
 
 .resultado {
-  margin-top: 30px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  color: white;
+  justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  background-color: #242424;
+  gap: 8px;
 }
