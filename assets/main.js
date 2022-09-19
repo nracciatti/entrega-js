@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
   MostrarPizzas();
 });
 
+let myPizzas = JSON.parse(localStorage.getItem("pizzas"));
+
+const saveToLocalStorage = () => {
+  localStorage.setItem("pizzas", JSON.stringify(pizzas));
+};
+
 //Creo la funcion
 function MostrarPizzas() {
   const dato = parseInt(formulario.value);
@@ -22,15 +28,19 @@ function MostrarPizzas() {
     <h2> Ingrese un ID valido. <h2>  <div>`;
     // alert("Ingrese un ID valido.");
     console.log("Ingrese un ID valido.");
+    return;
   }
+
   pizzas.forEach((pizza) => {
     if (pizza.id === dato) {
       pizzaName.textContent = "Seleccionste: " + `${pizza.nombre}`;
       pizzaIngredients.textContent = `${pizza.ingredientes}`;
       pizzaPrice.textContent = `$${pizza.precio}`;
-      pizzaFoto.textContent = `${pizza.foto}`;
+      pizzaFoto.src = `${pizza.foto}`;
     }
   });
+
+  saveToLocalStorage();
 }
 
 btnBusqueda.addEventListener("click", MostrarPizzas);
